@@ -1,0 +1,54 @@
+@import "vender/reset";
+@import "vender/fonts";
+@import "vender/vars";
+@import "vender/mixins";
+
+
+
+
+:root {
+    --animate-delay: .1s;
+}
+
+
+html,
+body {
+    height: 200vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.decoration-left,
+.decoration-right {
+    position: absolute;
+    top: 0;
+}
+
+.decoration-left {
+    left: 0;
+}
+
+.decoration-right {
+    right: 0;
+}
+
+@import "blocks/main";
+@import "blocks/events";
+@import "blocks/partition";
+@import "blocks/popup";
+
+@import "vender/media";

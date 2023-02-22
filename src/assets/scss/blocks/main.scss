@@ -1,0 +1,114 @@
+.main {
+    .title {
+        margin-top: 90px;
+    }
+}
+
+
+.main__content {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 9.9vh;
+}
+
+
+.title {
+    font-size: 72px;
+    line-height: 75px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: rgba($primary, .39);
+}
+
+.description {
+    width: 430px;
+    margin: 0 auto;
+    margin-top: 9px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(black, 0.8);
+}
+
+#countdown {
+    width: 588px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 72px;
+    color: $primary;
+    margin: 34px auto 53px auto;
+
+    span {
+        width: 20px;
+    }
+}
+
+
+#days::after {
+    content: "days";
+}
+
+#hours::after {
+    content: "hours";
+}
+
+#minutes::after {
+    content: "minutes";
+}
+
+#seconds::after {
+    content: "seconds";
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+    text-align: center;
+
+    &::after {
+        width: 132px;
+        height: 54px;
+        display: block;
+        background: url(../images/petal.svg) no-repeat;
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: 400;
+
+        color: white;
+        padding-top: 19px;
+
+    }
+}
+
+.content-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-link__description {
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 12px;
+}
+
+.content-link__button {
+    width: 192px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1D4169;
+
+    border-radius: 40px;
+    font-size: 18px;
+    line-height: 28px;
+    color: white;
+    border: none;
+    padding: 16px 20px 16px 28px;
+
+}

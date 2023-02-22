@@ -1,0 +1,198 @@
+.events {
+    height: 797px;
+    padding: 110px 0 100px 0;
+    text-align: center;
+    position: absolute;
+    bottom: -100vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.accordion {
+    @include accordion-header-big();
+    @include accordion-content();
+
+    width: 1714px;
+    height: 682px;
+    display: flex;
+    overflow: hidden;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+.accordion__item {
+    display: flex;
+    flex-direction: row;
+}
+
+.accordion__header {
+    position: relative;
+    background-size: cover;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 4px;
+        width: 85px;
+        z-index: 3;
+        border-bottom: 3px solid $red-line;
+        box-shadow: 0px 0px 10px $red-line;
+    }
+}
+
+.accordion__wrapper {
+    width: 85px;
+    height: 682px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-left: 4px solid white;
+    transition: .9s;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+        content: '';
+        width: 85px;
+        height: 682px;
+        background: rgba(18, 18, 18, 0.34);
+        background-blend-mode: darken;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        content: '';
+        width: 85px;
+        height: 682px;
+        background: linear-gradient(180deg, rgba(22, 44, 78, 0) 0%, #162C4E 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .accordion-number {
+        font-family: 'SF Pro Display';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 40px;
+        letter-spacing: -0.03em;
+        color: white;
+        margin-bottom: 20px;
+        z-index: 1;
+    }
+
+    .accordion-title {
+        font-family: 'SF Pro Display';
+        font-weight: 600;
+        font-size: 32px;
+        white-space: nowrap;
+        color: white;
+        transform: rotate(-90deg);
+        margin-bottom: 70px;
+        z-index: 2;
+    }
+}
+
+.active {
+    .accordion__wrapper {
+        background-color: #162c4e;
+    }
+}
+
+.accordion__content {
+    width: 995px;
+    height: 682px;
+    border-left: 2px solid white;
+    margin-right: -995px;
+    overflow: hidden;
+    transition: margin .7s linear;
+    position: relative;
+    z-index: 2;
+    will-change: left, top;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 995px;
+        z-index: 3;
+        border-bottom: 3px solid $red-line;
+        box-shadow: 0px 0px 10px $red-line;
+    }
+
+    &.show {
+        margin-right: 0;
+    }
+}
+
+.accordion__description {
+    width: 322px;
+    height: 633px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(20px);
+    padding-bottom: 50px;
+    padding-left: 42px;
+
+    .description-number {
+        position: absolute;
+        width: 405px;
+        height: 380px;
+        left: -143px;
+        top: -38px;
+        font-family: 'SF Pro Display';
+        font-weight: 600;
+        font-size: 380px;
+        letter-spacing: -0.03em;
+        color: rgba(255, 255, 255, 0.04);
+    }
+
+    .description-title {
+        font-family: 'SF Pro Display';
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: white;
+        margin-bottom: 18px;
+    }
+
+    .description-date {
+        font-family: 'SF Pro Display';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 25px;
+    }
+}
+
+.description-button {
+    font-family: 'SF Pro Display';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 20px 64px 20px 48px;
+    background: transparent;
+    border-left: 8px solid white;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 256px;
+        height: 57px;
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.8);
+        border-left: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

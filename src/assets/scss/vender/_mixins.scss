@@ -1,0 +1,47 @@
+@mixin accordion-header-big() {
+    @for $i from 1 through 8 {
+        .accordion__item--0#{$i} {
+            .accordion__header {
+                background: url(../images/accordion-header-0#{$i}.png) no-repeat;
+                background-size: cover;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@mixin accordion-header-small() {
+    @for $i from 1 through 8 {
+        .accordion__item--0#{$i} {
+            .accordion__header {
+                background: url(../images/accordion-header-0#{$i}-row.png) no-repeat;
+                background-size: cover;
+                z-index: 8;
+            }
+        }
+    }
+}
+
+@mixin accordion-content() {
+    @for $i from 1 through 8 {
+        .accordion__item--0#{$i} {
+            .accordion__content {
+                background: url(../images/events-photo-0#{$i}.png) no-repeat ;
+                background-size: cover;
+                @media (max-width: 767px) {
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+@mixin content-z-index() {
+    @for $i from 1 through 8 {
+        .accordion__item--0#{$i} {
+            .accordion__content {
+                z-index: 8 - $i;
+            }
+        }
+    }
+}
